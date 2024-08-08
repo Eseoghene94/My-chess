@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protege Chess Game Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 2px solid #333;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .cell {
+            width: 60px;
+            height: 60px;
+        }
+
+        .black {
+            background-color: #769656;
+        }
+
+        .white {
+            background-color: #eeeed2;
+        }
+
+        .chess-piece {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .tutorial {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tutorial h2 {
+            margin-top: 0;
+        }
+
+        .tutorial img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .tutorial p {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess Game Tutorial</h1>
+
+    <div class="chessboard" id="chessboard">
+        <!-- The chessboard cells -->
+        <div class="cell black" data-row="1" data-col="1"></div>
+        <div class="cell white" data-row="1" data-col="2"></div>
+        <div class="cell black" data-row="1" data-col="3"></div>
+        <div class="cell white" data-row="1" data-col="4"></div>
+        <div class="cell black" data-row="1" data-col="5"></div>
+        <div class="cell white" data-row="1" data-col="6"></div>
+        <div class="cell black" data-row="1" data-col="7"></div>
+        <div class="cell white" data-row="1" data-col="8"></div>
+        <div class="cell white" data-row="2" data-col="1"></div>
+        <div class="cell black" data-row="2" data-col="2"></div>
+        <div class="cell white" data-row="2" data-col="3"></div>
+        <div class="cell black" data-row="2" data-col="4"></div>
+        <div class="cell white" data-row="2" data-col="5"></div>
+        <div class="cell black" data-row="2" data-col="6"></div>
+        <div class="cell white" data-row="2" data-col="7"></div>
+        <div class="cell black" data-row="2" data-col="8"></div>
+        <div class="cell black" data-row="3" data-col="1"></div>
+        <div class="cell white" data-row="3" data-col="2"></div>
+        <div class="cell black" data-row="3" data-col="3"></div>
+        <div class="cell white" data-row="3" data-col="4"></div>
+        <div class="cell black" data-row="3" data-col="5"></div>
+        <div class="cell white" data-row="3" data-col="6"></div>
+        <div class="cell black" data-row="3" data-col="7"></div>
+        <div class="cell white" data-row="3" data-col="8"></div>
+        <div class="cell white" data-row="4" data-col="1"></div>
+        <div class="cell black" data-row="4" data-col="2"></div>
+        <div class="cell white" data-row="4" data-col="3"></div>
+        <div class="cell black" data-row="4" data-col="4"></div>
+        <div class="cell white" data-row="4" data-col="5"></div>
+        <div class="cell black" data-row="4" data-col="6"></div>
+        <div class="cell white" data-row="4" data-col="7"></div>
+        <div class="cell black" data-row="4" data-col="8"></div>
+        <div class="cell black" data-row="5" data-col="1"></div>
+        <div class="cell white" data-row="5" data-col="2"></div>
+        <div class="cell black" data-row="5" data-col="3"></div>
+        <div class="cell white" data-row="5" data-col="4"></div>
+        <div class="cell black" data-row="5" data-col="5"></div>
+        <div class="cell white" data-row="5" data-col="6"></div>
+        <div class="cell black" data-row="5" data-col="7"></div>
+        <div class="cell white" data-row="5" data-col="8"></div>
+        <div class="cell white" data-row="6" data-col="1"></div>
+        <div class="cell black" data-row="6" data-col="2"></div>
+        <div class="cell white" data-row="6" data-col="3"></div>
+        <div class="cell black" data-row="6" data-col="4"></div>
+        <div class="cell white" data-row="6" data-col="5"></div>
+        <div class="cell black" data-row="6" data-col="6"></div>
+        <div class="cell white" data-row="6" data-col="7"></div>
+        <div class="cell black" data-row="6" data-col="8"></div>
+        <div class="cell black" data-row="7" data-col="1"></div>
+        <div class="cell white" data-row="7" data-col="2"></div>
+        <div class="cell black" data-row="7" data-col="3"></div>
+        <div class="cell white" data-row="7" data-col="4"></div>
+        <div class="cell black" data-row="7" data-col="5"></div>
+        <div class="cell white" data-row="7" data-col="6"></div>
+        <div class="cell black" data-row="7" data-col="7"></div>
+        <div class="cell white" data-row="7" data-col="8"></div>
+        <div class="cell white" data-row="8" data-col="1"></div>
+        <div class="cell black" data-row="8" data-col="2"></div>
+        <div class="cell white" data-row="8" data-col="3"></div>
+        <div class="cell black" data-row="8" data-col="4"></div>
+        <div class="cell white" data-row="8" data-col="5"></div>
+        <div class="cell black" data-row="8" data-col="6"></div>
+        <div class="cell white" data-row="8" data-col="7"></div>
+        <div class="cell black" data-row="8" data-col="8"></div>
+
+        <!-- Place some pieces for demo purposes -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Chess_klt60.png" class="chess-piece" id="king" style="top: 0; left: 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Chess_qlt60.png" class="chess-piece" id="queen" style="top: 0; left: 60px;">
+    </div>
+
+    <div class="tutorial">
+        <h2>Introduction to Chess Pieces</h2>
+        <p>Chess is a strategic board game where each player controls an army of pieces. The objective is to checkmate the opponent's king.</p>
+
+        <h3>The Pieces</h3>
+        <p>The game has six different types of pieces, each with unique movement patterns.</p>
+        
+        <div>
+            <h4>1. King</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Chess_klt60.png" alt="King">
+            <p>The king moves one square in any direction. The game ends if your king is checkmated (put into a position where it can be captured and there is no legal move to escape).</p>
+        </div>
+        
+        <div>
+            <h4>2. Queen</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Chess_qlt60.png" alt="Queen">
+            <p>The queen is the most powerful piece. It can move any number of squares in any direction: vertically, horizontally, or diagonally.</p>
+        </div>
+
+        <div>
+            <h4>3. Rook</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Chess_rlt60.png" alt="Rook">
+            <p>The rook moves any number of squares horizontally or vertically.</p>
+        </div>
+
+        <div>
+            <h4>4. Bishop</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Chess_blt60.png" alt="Bishop">
+            <p>The bishop moves diagonally any number of squares.</p>
+        </div>
+
+        <div>
+            <h4>5. Knight</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Chess_nlt60.png" alt="Knight">
+            <p>The knight has a unique movement pattern: it moves in an "L" shape, two squares in one direction and then one square perpendicular. It is the only piece that can "jump" over other pieces.</p>
+        </div>
+
+        <div>
+            <h4>6. Pawn</h4>
+            <img class="chess-piece" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" alt="Pawn">
+            <p>Pawns move forward one square but capture diagonally. On their first move, they can move forward two squares. If a pawn reaches the opposite end of the board, it can be promoted to any other piece (except a king).</p>
+        </div>
+
+        <h3>Check and Checkmate</h3>
+        <div>
+            <p><strong>Check:</strong> When your king is in a position to be captured (under attack), it is in "check". You must make a move to get out of check.</p>
+            <p><strong>Checkmate:</strong> When your king is in check and there is no legal move to escape, the game ends, and your opponent wins. This is called "checkmate".</p>
+        </div>
+
+        <h3>Special Moves</h3>
+        <div>
+            <ul>
+                <li><strong>Castling:</strong> A special move where the king moves two squares towards a rook, and the rook moves to the square over which the king crossed. This move can only be done if neither the king nor the rook has moved before and there are no pieces between them.</li>
+                <li><strong>En Passant:</strong> A special pawn capture that can occur when a pawn moves two squares forward from its starting position, and an enemy pawn could have captured it had it moved only one square. The enemy pawn can capture the first pawn "en passant" as if it had only moved one square.</li>
+                <li><strong>Pawn Promotion:</strong> When a pawn reaches the opposite end of the board, it can be promoted to any other piece, typically a queen.</li>
+            </ul>
+        </div>
+
+        <h3>Basic Strategies</h3>
+        <div>
+            <h4>1. Control the Center</h4>
+            <p>Try to control the center of the board with your pawns and pieces. This gives your pieces more mobility and restricts your opponent's options.</p>
+        </div>
+
+        <div>
+            <h4>2. Develop Your Pieces</h4>
+            <p>Get your knights and bishops out from their starting positions early in the game to prepare for a stronger middle game.</p>
+        </div>
+
+        <div>
+            <h4>3. Protect Your King</h4>
+            <p>Castle early to protect your king and connect your rooks, which increases their power on the board.</p>
+        </div>
+
+        <div>
+            <h4>4. Avoid Moving the Same Piece Multiple Times</h4>
+            <p>In the opening, avoid moving the same piece repeatedly unless necessary. Try to develop all your pieces to maximize their effectiveness.</p>
+        </div>
+
+        <div>
+            <h4>5. Watch Out for Forks and Pins</h4>
+            <p>A fork occurs when one piece attacks two or more pieces simultaneously, often leading to material loss. A pin occurs when a piece is attacked and moving it would expose a more valuable piece behind it.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for dragging and dropping pieces
+        const chessboard = document.getElementById('chessboard');
+        const pieces = document.querySelectorAll('.chess-piece');
+
+        pieces.forEach(piece => {
+            piece.addEventListener('mousedown', onMouseDown);
+        });
+
+        function onMouseDown(event) {
+            const piece = event.target;
+            let shiftX = event.clientX - piece.getBoundingClientRect().left;
+            let shiftY = event.clientY - piece.getBoundingClientRect().top;
+
+            piece.style.position = 'absolute';
+            piece.style.zIndex = 1000;
+            document.body.append(piece);
+
+            moveAt(event.pageX, event.pageY);
+
+            function moveAt(pageX, pageY) {
+                piece.style.left = pageX - shiftX + 'px';
+                piece.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            piece.onmouseup = function() {
+                document.removeEventListener('mousemove', onMouseMove);
+                piece.onmouseup = null;
+
+                // Snap to grid
+                let chessboardRect = chessboard.getBoundingClientRect();
+                let x = piece.getBoundingClientRect().left - chessboardRect.left;
+                let y = piece.getBoundingClientRect().top - chessboardRect.top;
+
+                let col = Math.round(x / 60);
+                let row = Math.round(y / 60);
+
+                piece.style.left = col * 60 + 'px';
+                piece.style.top = row * 60 + 'px';
+
+                // Move piece back to the chessboard
+                chessboard.append(piece);
+            };
+        }
+
+        pieces.forEach(piece => {
+            piece.ondragstart = function() {
+                return false;
+            };
+        });
+    </script>
+</body>
+</html>
