@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protege Chess Game Tutorial</title>
+    <title>Protege Chess Tutorial</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,7 +73,7 @@
     </style>
 </head>
 <body>
-    <h1>Chess Game Tutorial</h1>
+    <h1>Protege Chess Game Tutorial</h1>
 
     <div class="chessboard" id="chessboard">
         <!-- The chessboard cells -->
@@ -145,6 +145,20 @@
         <!-- Place some pieces for demo purposes -->
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Chess_klt60.png" class="chess-piece" id="king" style="top: 0; left: 0;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Chess_qlt60.png" class="chess-piece" id="queen" style="top: 0; left: 60px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Chess_rlt60.png" class="chess-piece" id="rook1" style="top: 0; left: 120px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Chess_rlt60.png" class="chess-piece" id="rook2" style="top: 0; left: 420px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Chess_blt60.png" class="chess-piece" id="bishop1" style="top: 0; left: 180px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Chess_blt60.png" class="chess-piece" id="bishop2" style="top: 0; left: 360px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Chess_nlt60.png" class="chess-piece" id="knight1" style="top: 0; left: 240px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Chess_nlt60.png" class="chess-piece" id="knight2" style="top: 0; left: 300px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn1" style="top: 60px; left: 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn2" style="top: 60px; left: 60px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn3" style="top: 60px; left: 120px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn4" style="top: 60px; left: 180px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn5" style="top: 60px; left: 240px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn6" style="top: 60px; left: 300px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn7" style="top: 60px; left: 360px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt60.png" class="chess-piece" id="pawn8" style="top: 60px; left: 420px;">
     </div>
 
     <div class="tutorial">
@@ -233,7 +247,7 @@
     </div>
 
     <script>
-        // JavaScript for dragging and dropping pieces
+        // JavaScript for dragging and dropping pieces (optional)
         const chessboard = document.getElementById('chessboard');
         const pieces = document.querySelectorAll('.chess-piece');
 
